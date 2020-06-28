@@ -1,0 +1,54 @@
+$width: 5rem;
+test%placeholder {
+    color: blue($color: #000000)
+}
+.foo.bar .baz.bang, .bip.qux {
+    $selector: & !global;
+}
+#main {
+    @extend %placeholder;
+    $color: rgba(200,210,220,0.8);
+    height: $selector;
+    min-height: $width;
+    width: $width;
+    color: transparentize($color, 0.25);
+    .body {
+        @import "nested";
+    }
+}
+.main {
+    @import "nested";
+}
+#admin .tabbar p {
+    font-weight: bold;
+}
+#demo .overview .fakelink {
+    @extend p;
+}
+a.important {
+    @extend .notice !optional;
+}
+@media print {
+    .parent1{
+        color: blue;
+        @at-root (with: media) {
+            .child1{
+                width: 100px;
+            }
+        }
+    }
+}
+@mixin adjust-location($x, $y) {
+    @if unitless($x) {
+      @warn--quiet "Assuming #{$x} to be in pixels";
+      $x: 1px * $x;
+    }
+    @if unitless($y) {
+      @warn "Assuming #{$y} to be in pixels";
+      $y: 1px * $y;
+    }
+    position: relative; left: $x; top: $y;
+  }
+.mixin-test {
+    @include adjust-location(10, 20);
+}

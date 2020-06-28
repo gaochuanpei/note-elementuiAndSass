@@ -1,0 +1,37 @@
+.row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+}
+.grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+}
+.bg-purple {
+    background-color: #d3dce6;
+}
+.el-table .bg-yellow {
+    background-color: yellow;
+}
+.bg-purple-light {
+    background-color: #e5e9f2;
+}
+.el-header, .el-footer {
+    background-color: #b3c0d1;
+}
+.el-aside {
+    line-height: 200px;
+    background-color: #d3dce6;
+}
+.el-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-tree-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-right: 8px;
+}
